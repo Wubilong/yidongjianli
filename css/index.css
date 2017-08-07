@@ -1,0 +1,768 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  width: 100%;
+  height: 25%;
+  background-size: 100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+/*��һ��*/
+.first {
+  position: relative;
+  background-color: #212E36;
+}
+.first .fang-w {
+  position: absolute;
+  top: 11rem;
+  left: 10rem;
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid #16EAB7;
+  transform: translateX(-50%) translateY(-30%) rotate(45deg);
+  z-index: 1;
+}
+.first .fang-n {
+  position: absolute;
+  top: 11.2rem;
+  left: 10rem;
+  width: 9rem;
+  height: 9rem;
+  background-color: #16EAB7;
+  overflow: hidden;
+  transform: translateX(-50%) translateY(-30%) rotate(45deg);
+  z-index: 1;
+}
+.first .fang-n .text {
+  position: absolute;
+  width: 9rem;
+  height: 7rem;
+  font-size: 2rem;
+  font-weight: 700;
+  transform: rotate(-45deg);
+  top: 2.3rem;
+  left: 1.8rem;
+}
+.first .fang-n .text .text2 {
+  margin-left: 2.2rem;
+  margin-top: 0.4rem;
+  font-size: 25px;
+  font-weight: 400;
+}
+.first .fang-d {
+  width: 17rem;
+  height: 17rem;
+  background-color: #058063;
+  position: absolute;
+  left: 1.5rem;
+  bottom: 13rem;
+  transform: translateY(1000px) rotate(45deg);
+}
+/*��һ�����Ӷ���*/
+.first.current .fang-w {
+  animation: scolea 3s infinite ;
+}
+.first.current .fang-n {
+  animation: scoleb 2s 1s 2  alternate;
+}
+.first.current .fang-d {
+  animation: undo 2s, undown-1 5s 2s linear infinite;
+}
+/*��һ�����߿��Ŵ��Զ��嶯��*/
+@keyframes scolea {
+  0% {
+    transform: translateX(-50%) translateY(-30%) rotate(45deg) scale(1);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-30%) rotate(45deg) scale(5);
+  }
+}
+/*��һ�����˼����Ŵ���ת�Զ��嶯��*/
+@keyframes scoleb {
+  0% {
+    transform: translateX(-50%) translateY(-30%) rotate(45deg) scale(1);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-30%) rotate(400deg) scale(1.5);
+  }
+}
+/*��һ�������������κ����Զ��嶯��*/
+@keyframes undown-1 {
+  0% {
+    transform: translateY(0px) rotate(45deg);
+  }
+  30% {
+    transform: translateY(15px) rotate(45deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(45deg);
+  }
+  70% {
+    transform: translateY(15px) rotate(45deg);
+  }
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+}
+@keyframes undo {
+  0% {
+    transform: translateY(480px) rotate(45deg);
+  }
+  100% {
+    transform: translateY(0) rotate(45deg);
+  }
+}
+/*�ڶ���*/
+.second {
+  position: relative;
+  background: url(../images/bg1.jpg) no-repeat;
+  background-size: 100% 100%;
+  /*С�һ�*/
+  /*��Ƭ*/
+  /*����*/
+  /*�ײ�*/
+}
+.second .w-photo {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 2.5rem;
+  top: 1rem;
+}
+.second .w-photo .rocket {
+  position: absolute;
+  left: 1rem;
+  top: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+  background: url(../images/rocket.png) no-repeat;
+  background-size: 100% 100%;
+}
+.second .photo {
+  position: absolute;
+  left: 5rem;
+  top: 1.5rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  border: 3px solid #999;
+  background: url(../images/jianzhao.jpg) no-repeat;
+  background-size: 300px 300px;
+  background-position: -58px -50px;
+}
+.second .second-content {
+  position: absolute;
+  left: 2.5rem;
+  top: 17rem;
+  width: 15rem;
+  height: 15rem;
+  color: #fff;
+  text-align: center;
+}
+.second .second-content h2 {
+  margin-bottom: 2rem;
+  transform: translateY(500px);
+}
+.second .second-content h4 {
+  margin-bottom: 1rem;
+  transform: translateY(500px);
+}
+.second .second-content h3 {
+  margin-top: 3rem;
+  opacity: 0;
+}
+.second .arr {
+  position: absolute;
+}
+/*�ڶ�������*/
+.second.current .w-photo {
+  animation: rocket 5s linear infinite;
+}
+.second.current h2 {
+  transition: transform 1s;
+  transform: translateY(0);
+}
+.second.current h4 {
+  transition: transform 1s 0.7s;
+  transform: translateY(0);
+}
+.second.current h3 {
+  transition: opacity 1s 1.5s;
+  opacity: 1;
+}
+/*�ڶ���С�����Զ��嶯��*/
+@keyframes rocket {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*������*/
+.third {
+  position: relative;
+  background: url(../images/bg1.jpg) no-repeat;
+  background-size: 100% 100%;
+  /* �����α���*/
+  /*����*/
+}
+.third .big {
+  width: 15rem;
+  height: 16rem;
+  position: absolute;
+  left: 2.5rem;
+  top: 9rem;
+  background: url(../images/bg5-w3.png) no-repeat;
+  background-size: 100% 100%;
+}
+.third .big .big-one {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../images/bg5-w2.png) no-repeat;
+  background-size: 100% 100%;
+}
+.third .big .big-two {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../images/bg5-w1.png) no-repeat;
+  background-size: 100% 100%;
+}
+.third .box {
+  position: absolute;
+  width: 3.5rem;
+  height: 3rem;
+  background-color: #16EAB7;
+  line-height: 3rem;
+  border-radius: 50%;
+  text-align: center;
+}
+.third .box1 {
+  position: absolute;
+  left: 7.8rem;
+  top: 15rem;
+  font-size: 55px;
+  color: #c7254e;
+  font-weight: 900;
+}
+.third .box2 {
+  left: 8.3rem;
+  top: 7.5rem;
+}
+.third .box3 {
+  left: 0.8rem;
+  top: 11.5rem;
+}
+.third .box4 {
+  left: 15.8rem;
+  top: 11.5rem;
+}
+.third .box5 {
+  left: 0.8rem;
+  top: 19.5rem;
+}
+.third .box6 {
+  left: 15.8rem;
+  top: 19.5rem;
+}
+.third .box7 {
+  left: 8.3rem;
+  top: 23.5rem;
+}
+.third .arr {
+  position: absolute;
+}
+/*����������*/
+.third.current .big {
+  animation: SR 1s ;
+}
+.third.current .box {
+  animation: SC 0.5s ;
+}
+/*box�����Զ��嶯��*/
+@keyframes SC {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/*big�����Զ��嶯��*/
+@keyframes SR {
+  0% {
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(180deg);
+  }
+}
+/*������*/
+.fore {
+  position: relative;
+  background: url(../images/bg1.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+.fore .job-one {
+  position: absolute;
+  top: 5rem;
+  left: 1rem;
+  width: 18rem;
+  height: 7rem;
+}
+.fore .job-two {
+  position: absolute;
+  top: 13rem;
+  left: 1rem;
+  width: 18rem;
+  height: 8rem;
+}
+.fore .job-third {
+  position: absolute;
+  top: 21rem;
+  left: 1rem;
+  width: 18rem;
+  height: 8rem;
+}
+.fore .arr {
+  position: absolute;
+}
+/*����������*/
+.fore.current .w-circle {
+  transition: transform 1s;
+  transform: scale(1);
+}
+.fore.current .words {
+  animation: WD 2s;
+}
+/*�������Զ��嶯��*/
+@keyframes WD {
+  0% {
+    transform: translateX(500px);
+  }
+  30% {
+    transform: translateX(-30px);
+  }
+  60% {
+    transform: translateX(10px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/*������*/
+.fifth {
+  position: relative;
+  background: url(../images/bg1.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+.fifth p:nth-child(2) {
+  position: absolute;
+  left: 2rem;
+  top: 7rem;
+  font: 22px/20px "Microsoft Yahei";
+  color: #16EAB7;
+  opacity: 0;
+}
+.fifth span:nth-child(3) {
+  position: absolute;
+  left: 2rem;
+  top: 9.5rem;
+  font: 24px/30px "Microsoft Yahei";
+  color: #fff;
+  transform: translateX(500px);
+}
+.fifth p:nth-child(4) {
+  position: absolute;
+  left: 2rem;
+  top: 14rem;
+  font: 22px/20px "Microsoft Yahei";
+  color: #16EAB7;
+  opacity: 0;
+}
+.fifth span:nth-child(5) {
+  position: absolute;
+  left: 2rem;
+  top: 17rem;
+  font: 24px/24px "Microsoft Yahei";
+  color: #fff;
+  transform: translateX(500px);
+}
+.fifth p:nth-child(6) {
+  position: absolute;
+  left: 2rem;
+  top: 21rem;
+  font: 22px/20px "Microsoft Yahei";
+  color: #16EAB7;
+  opacity: 0;
+}
+.fifth span:nth-child(7) {
+  position: absolute;
+  left: 2rem;
+  top: 24rem;
+  font: 24px/24px "Microsoft Yahei";
+  color: #fff;
+  transform: translateX(500px);
+}
+.fifth .arr {
+  position: absolute;
+}
+/*����������*/
+.fifth.current p {
+  transition: opacity 1s linear;
+  opacity: 1;
+}
+.fifth.current span {
+  transition: transform 1s linear;
+  transform: translateX(0);
+}
+.fifth.current span:nth-child(3) {
+  transition-delay: 0.5s;
+}
+.fifth.current p:nth-child(4) {
+  transition-delay: 1s;
+}
+.fifth.current span:nth-child(5) {
+  transition-delay: 1.5s;
+}
+.fifth.current p:nth-child(6) {
+  transition-delay: 2s;
+}
+.fifth.current span:nth-child(7) {
+  transition-delay: 2.5s;
+}
+/*������*/
+.sixth {
+  position: relative;
+  background: url(../images/bg1.jpg) no-repeat;
+  background-size: 100% 100%;
+  /*�ײ�*/
+}
+.sixth p {
+  opacity: 0;
+}
+.sixth p:nth-child(2) {
+  position: absolute;
+  left: 2rem;
+  top: 6rem;
+  font: 22px/30px "Microsoft Yahei";
+  color: #fff;
+}
+.sixth .progress:nth-child(3) {
+  left: 3rem;
+  top: 9rem;
+}
+.sixth .progress:nth-child(3) .p-n {
+  width: 0%;
+}
+.sixth p:nth-child(4) {
+  position: absolute;
+  left: 2rem;
+  top: 12rem;
+  font: 22px/30px "Microsoft Yahei";
+  color: #fff;
+}
+.sixth .progress:nth-child(5) {
+  left: 3rem;
+  top: 15rem;
+}
+.sixth .progress:nth-child(5) .p-n {
+  width: 0%;
+}
+.sixth p:nth-child(6) {
+  position: absolute;
+  left: 2rem;
+  top: 18rem;
+  font: 22px/30px "Microsoft Yahei";
+  color: #fff;
+}
+.sixth .progress:nth-child(7) {
+  left: 3rem;
+  top: 21rem;
+}
+.sixth .progress:nth-child(7) .p-n {
+  width: 0%;
+}
+.sixth p:nth-child(8) {
+  position: absolute;
+  left: 2rem;
+  top: 24rem;
+  font: 22px/30px "Microsoft Yahei";
+  color: #fff;
+}
+.sixth .progress:nth-child(9) {
+  left: 3rem;
+  top: 27rem;
+}
+.sixth .progress:nth-child(9) .p-n {
+  width: 0%;
+}
+.sixth .arr {
+  position: absolute;
+}
+/*����������*/
+.sixth.current p {
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+.sixth.current .progress:nth-child(3) > .p-n {
+  width: 80%;
+  transition: width 2s;
+}
+.sixth.current .progress:nth-child(5) > .p-n {
+  width: 90%;
+  transition: width 2s 0.5s ;
+}
+.sixth.current .progress:nth-child(7) > .p-n {
+  width: 80%;
+  transition: width 2s 1s;
+}
+.sixth.current .progress:nth-child(9) > .p-n {
+  width: 85%;
+  transition: width 2s 1.5s;
+}
+/*������*/
+.seventh {
+  position: relative;
+  background: url(../images/bg1.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+.seventh .content {
+  background-color: #fff;
+  opacity: 0.3;
+  position: absolute;
+  top: 2.3rem;
+  left: 1.6rem;
+  width: 15rem;
+  height: 20rem;
+}
+.seventh div {
+  margin-top: 4rem;
+  padding-left: 2rem;
+  width: 100%;
+  height: 2rem;
+}
+.seventh .email {
+  margin-left: 2rem;
+  position: absolute;
+  top: 5rem;
+  left: 1.6rem;
+  padding-left: 4rem;
+  line-height: 2rem;
+  color: #fff;
+  font-family: "Microsoft Yahei";
+  animation: seven 0.7s 1s linear alternate infinite;
+}
+.seventh .email span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  background: url(../images/email.png) no-repeat;
+  background-size: 100% 100%;
+  z-index: 99;
+}
+.seventh .call {
+  margin-left: 2rem;
+  position: absolute;
+  top: 11rem;
+  left: 1.6rem;
+  padding-left: 4rem;
+  line-height: 2rem;
+  color: #fff;
+  font-family: "Microsoft Yahei";
+  animation: seven 0.7s 1s linear alternate infinite;
+}
+.seventh .call span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  background: url(../images/iphone.png) no-repeat;
+  background-size: 100% 100%;
+  z-index: 99;
+}
+.seventh .QQ {
+  margin-left: 2rem;
+  position: absolute;
+  top: 17rem;
+  left: 1.6rem;
+  padding-left: 4rem;
+  line-height: 2rem;
+  color: #fff;
+  font-family: "Microsoft Yahei";
+  animation: seven 0.7s 1s linear alternate infinite;
+}
+.seventh .QQ span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  background: url(../images/QQ.png) no-repeat;
+  background-size: 100% 100%;
+  z-index: 99;
+}
+.seventh .arr {
+  position: absolute;
+  margin-left: -1rem;
+}
+/*����������*/
+/*�������Զ��嶯��*/
+@keyframes seven {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+/*�Զ�����ʽ*/
+/*����*/
+h1 {
+  color: #fff;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+.bg {
+  position: relative;
+  background: url(../images/bg1.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+.w-circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  float: left;
+  margin-right: 5px;
+  background: url(../images/bg4-waiyuan.png) no-repeat;
+  background-size: 100% 100%;
+  transform: scale(0);
+}
+.w-circle .n-circle {
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-top: 0.4rem;
+  margin-left: 0.45rem;
+  background: url(../images/bg4-neiyuan.png) no-repeat;
+  background-size: 100% 100%;
+}
+.words {
+  overflow: hidden;
+  color: #fff;
+}
+.words p:nth-child(1) {
+  line-height: 30px;
+  color: #adadad;
+}
+.words h2 {
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+.words p:nth-child(3) {
+  color: #adadad;
+}
+/*������*/
+.progress {
+  position: absolute;
+  left: 3rem;
+  top: 9rem;
+  width: 15rem;
+  height: 1.5rem;
+  background-color: #adadad;
+}
+.progress .p-n {
+  width: 80%;
+  height: 100%;
+  background-color: #16EAB7;
+}
+.progress span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #fff;
+  z-index: 1;
+}
+/*�������ײ����¸����Զ��嶯��*/
+@keyframes updown {
+  0% {
+    transform: translateY(0) translateX(-50%);
+  }
+  100% {
+    transform: translateY(15px) translateX(-50%);
+  }
+}
+/*������������ת�Զ��嶯��*/
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*��������ʽ*/
+/*�ײ��»�*/
+.arr {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  width: 40%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  animation: updown 2s linear alternate infinite;
+  text-align: center;
+  color: #ccc;
+  font-size: 20px;
+}
+/*����*/
+.music-btn {
+  width: 60px;
+  height: 50px;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  z-index: 100;
+}
+.music {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  animation: rot 5s linear infinite normal;
+}

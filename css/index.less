@@ -1,0 +1,836 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+}
+.swiper-container{
+  width: 100%;
+  height: 100%;
+
+}
+.swiper-wrapper{
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide{
+  width: 100%;
+  height: 25%;
+  //background: url(../images/bg1.jpg) no-repeat;
+  background-size:  100% 100%;
+  position: relative;
+  overflow: hidden;
+}
+/*第一屏*/
+.first {
+  position: relative;
+  background-color: #212E36;
+  //第一屏外边框
+  .fang-w{
+    position: absolute;
+    top: 11rem;
+    left: 10rem;
+    width: 10rem;
+    height: 10rem;
+    border: 1px solid #16EAB7;
+    transform: translateX(-50%) translateY(-30%) rotate(45deg);
+    z-index: 1;
+  }
+  //第一屏个人简历
+  .fang-n{
+    position: absolute;
+    top: 11.2rem;
+    left: 10rem;
+    width: 9rem;
+    height: 9rem;
+    background-color: #16EAB7;
+    overflow: hidden;
+    transform: translateX(-50%) translateY(-30%) rotate(45deg);
+    z-index: 1;
+    .text{
+      position: absolute;
+      width: 9rem;
+      height: 7rem;
+      font-size: 2rem;
+      font-weight: 700;
+      transform: rotate(-45deg);
+      top: 2.3rem;
+      left: 1.8rem;
+      .text1 {
+        //transform: rotate(-40deg);
+      }
+      .text2{
+        margin-left: 2.2rem;
+        margin-top: 0.4rem;
+        font-size: 25px;
+        font-weight: 400;
+        //transform: rotate(-40deg);
+
+
+      }
+    }
+
+  }
+  //第一屏背景背景菱形盒子
+  .fang-d{
+    width: 17rem;
+    height: 17rem;
+    background-color: #058063;
+    position: absolute;
+    left: 1.5rem;
+    bottom: 13rem;
+    transform: translateY(1000px) rotate(45deg);
+
+
+  }
+
+}
+/*第一屏添加动画*/
+.first.current .fang-w{
+   animation: scolea 3s infinite ;
+ }
+.first.current .fang-n{
+
+  animation: scoleb 2s 1s 2  alternate;
+
+}
+.first.current .fang-d{
+  //transition: all 2s 2s;
+  //transform: translateY(0) rotate(45deg);
+  animation: undo 2s,undown-1 5s 2s linear infinite;
+}
+/*第一屏外边框放大自定义动画*/
+@keyframes scolea {
+  0%{
+
+    transform:translateX(-50%) translateY(-30%) rotate(45deg) scale(1);
+  }
+  100%{
+    transform:translateX(-50%) translateY(-30%) rotate(45deg) scale(5);
+  }
+}
+/*第一屏个人简历放大旋转自定义动画*/
+@keyframes scoleb {
+  0%{
+
+    transform:translateX(-50%) translateY(-30%) rotate(45deg) scale(1);
+  }
+  100%{
+    transform:translateX(-50%) translateY(-30%) rotate(400deg) scale(1.5);
+  }
+}
+/*第一屏背景背景菱形盒子自定义动画*/
+@keyframes undown-1 {
+  0%{
+    transform: translateY(0px) rotate(45deg);
+  }
+  30%{
+    transform: translateY(15px) rotate(45deg);
+  }
+  50%{
+
+    transform: translateY(0px) rotate(45deg);
+  }
+  70%{
+
+    transform: translateY(15px) rotate(45deg);
+  }
+  100%{
+    transform: translateY(0) rotate(45deg);
+  }
+}
+@keyframes undo {
+  0%{
+    transform: translateY(480px) rotate(45deg);
+  }
+  100%{
+    transform: translateY(0) rotate(45deg);
+  }
+}
+
+/*第二屏*/
+.second{
+  .bg;
+  /*小灰机*/
+  .w-photo {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    //border: 1px solid skyblue;
+    position: absolute;
+    left: 2.5rem;
+    top: 1rem;
+    .rocket {
+      position: absolute;
+      left: 1rem;
+      top: 1.5rem;
+      width: 2rem;
+      height: 2rem;
+      background: url(../images/rocket.png) no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  /*照片*/
+  .photo{
+    position: absolute;
+    left: 5rem;
+    top: 1.5rem;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    border: 3px solid #999;
+    background: url(../images/jianzhao.jpg) no-repeat;
+    background-size: 300px 300px;
+    background-position: -58px -50px;
+  }
+  /*文字*/
+  .second-content{
+    position: absolute;
+    left: 2.5rem;
+    top: 17rem;
+    width: 15rem;
+    height: 15rem;
+    color: #fff;
+    text-align: center;
+    h2{
+      margin-bottom: 2rem;
+      transform: translateY(500px);
+    }
+    h4{
+      margin-bottom: 1rem;
+      transform: translateY(500px);
+    }
+    h3{
+      margin-top: 3rem;
+      opacity: 0;
+    }
+
+  }
+  /*底部*/
+  .arr{
+    position: absolute;
+
+  }
+}
+/*第二屏动画*/
+.second.current .w-photo{
+  animation: rocket 5s linear infinite;
+}
+.second.current h2{
+  transition:  transform 1s;
+  transform: translateY(0);
+}
+.second.current h4{
+  transition:  transform 1s 0.7s;
+  transform: translateY(0);
+}
+.second.current h3{
+  transition: opacity 1s 1.5s;
+  opacity: 1;
+}
+/*第二屏小火箭自定义动画*/
+@keyframes rocket {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+/*第三屏*/
+.third {
+  position: relative;
+  background: url(../images/bg1.jpg) no-repeat;
+  background-size: 100% 100%;
+
+  /* 多边形背景*/
+  .big{
+    width: 15rem;
+    height: 16rem;
+    position: absolute;
+    left: 2.5rem;
+    top: 9rem;
+    background: url(../images/bg5-w3.png) no-repeat;
+    background-size: 100% 100%;
+
+    .big-one{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url(../images/bg5-w2.png) no-repeat;
+      background-size: 100% 100%;
+    }
+    .big-two{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url(../images/bg5-w1.png) no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+  /*盒子*/
+  .box{
+    position: absolute;
+    width: 3.5rem;
+    height: 3rem;
+    background-color: #16EAB7;
+    line-height: 3rem;
+    border-radius: 50%;
+    text-align: center;
+
+  }
+  .box1{
+    position: absolute;
+    left: 7.8rem;
+    top: 15rem;
+    //background-color: #ccc;
+    font-size: 55px;
+    color: #c7254e;
+    font-weight: 900;
+  }
+  .box2{
+    left: 8.3rem;
+    top: 7.5rem;
+  }
+  .box3{
+    left: 0.8rem;
+    top: 11.5rem;
+  }
+  .box4{
+    left: 15.8rem;
+    top: 11.5rem;
+  }
+  .box5{
+    left: 0.8rem;
+    top: 19.5rem;
+  }
+  .box6{
+    left: 15.8rem;
+    top: 19.5rem;
+  }
+  .box7{
+    left: 8.3rem;
+    top: 23.5rem;
+  }
+  .arr{
+    position: absolute;
+  }
+}
+/*第三屏动画*/
+.third.current .big{
+  animation: SR 1s ;
+}
+.third.current .box{
+  animation: SC 0.5s ;
+}
+/*box盒子自定义动画*/
+@keyframes SC {
+  0%{
+    transform: scale(0);
+  }
+  30%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+/*big背景自定义动画*/
+@keyframes SR {
+  0%{
+    transform: scale(0) rotate(0deg);
+  }
+  50%{
+    transform: scale(1) rotate(0deg);
+  }
+  100%{
+    transform: scale(1) rotate(180deg);
+  }
+}
+
+/*第四屏*/
+.fore{
+  .bg;
+  .job-one{
+    position: absolute;
+    top: 5rem;
+    left: 1rem;
+    width: 18rem;
+    height: 7rem;
+  }
+  .job-two{
+    position: absolute;
+    top: 13rem;
+    left: 1rem;
+    width: 18rem;
+    height: 8rem;
+
+  }
+  .job-third{
+    position: absolute;
+    top: 21rem;
+    left: 1rem;
+    width: 18rem;
+    height: 8rem;
+
+  }
+  .arr{
+    position: absolute;
+  }
+}
+/*第四屏动画*/
+.fore.current .w-circle{
+  transition: transform 1s;
+  transform: scale(1);
+}
+.fore.current .words{
+  animation: WD 2s;
+}
+/*第四屏自定义动画*/
+@keyframes WD {
+  0%{
+    transform: translateX(500px);
+  }
+  30%{
+    transform: translateX(-30px);
+  }
+  60%{
+    transform: translateX(10px);
+  }
+  80%{
+    transform: translateX(-10px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+
+
+/*第五屏*/
+.fifth{
+  position: relative;
+  .bg;
+  p:nth-child(2){
+    position: absolute;
+    left: 2rem;
+    top: 7rem;
+    font: 22px/20px "Microsoft Yahei";
+    color: #16EAB7;
+    opacity: 0;
+  }
+  span:nth-child(3){
+    position: absolute;
+    left: 2rem;
+    top: 9.5rem;
+    font: 24px/30px "Microsoft Yahei";
+    color: #fff;
+    transform: translateX(500px);
+  }
+  p:nth-child(4){
+    position: absolute;
+    left: 2rem;
+    top: 14rem;
+    font: 22px/20px "Microsoft Yahei";
+    color: #16EAB7;
+    opacity: 0;
+  }
+  span:nth-child(5){
+    position: absolute;
+    left: 2rem;
+    top: 17rem;
+    font: 24px/24px "Microsoft Yahei";
+    color: #fff;
+    transform: translateX(500px);
+  }
+  p:nth-child(6){
+    position: absolute;
+    left: 2rem;
+    top: 21rem;
+    font: 22px/20px "Microsoft Yahei";
+    color: #16EAB7;
+    opacity: 0;
+  }
+  span:nth-child(7){
+    position: absolute;
+    left: 2rem;
+    top: 24rem;
+    font: 24px/24px "Microsoft Yahei";
+    color: #fff;
+    transform: translateX(500px);
+  }
+  .arr{
+    position: absolute;
+  }
+}
+/*第五屏动画*/
+.fifth.current p{
+  transition: opacity 1s linear;
+  opacity: 1;
+}
+.fifth.current span{
+  transition: transform 1s linear;
+  transform: translateX(0);
+}
+.fifth.current span:nth-child(3){
+  transition-delay: 0.5s;
+}
+.fifth.current p:nth-child(4){
+  transition-delay: 1s;
+}
+.fifth.current span:nth-child(5){
+  transition-delay: 1.5s;
+}
+.fifth.current p:nth-child(6){
+  transition-delay: 2s;
+}
+.fifth.current span:nth-child(7){
+  transition-delay: 2.5s;
+}
+
+
+
+/*第六屏*/
+.sixth{
+  position: relative;
+  .bg;
+  p{
+    opacity: 0;
+  }
+  p:nth-child(2){
+    position: absolute;
+    left: 2rem;
+    top: 6rem;
+    font: 22px/30px "Microsoft Yahei";
+    color: #fff;
+  }
+  .progress:nth-child(3){
+    left: 3rem;
+    top: 9rem;
+    .p-n{
+      width: 0%;
+    }
+  }
+  p:nth-child(4){
+    position: absolute;
+    left: 2rem;
+    top: 12rem;
+    font: 22px/30px "Microsoft Yahei";
+    color: #fff;
+  }
+  .progress:nth-child(5){
+    left: 3rem;
+    top: 15rem;
+    .p-n{
+      width: 0%;
+    }
+  }
+  p:nth-child(6){
+    position: absolute;
+    left: 2rem;
+    top: 18rem;
+    font: 22px/30px "Microsoft Yahei";
+    color: #fff;
+  }
+  .progress:nth-child(7){
+    left: 3rem;
+    top: 21rem;
+    .p-n{
+      width: 0%;
+    }
+  }
+  p:nth-child(8){
+    position: absolute;
+    left: 2rem;
+    top: 24rem;
+    font: 22px/30px "Microsoft Yahei";
+    color: #fff;
+  }
+  .progress:nth-child(9){
+    left: 3rem;
+    top: 27rem;
+    .p-n{
+      width: 0%;
+    }
+
+  }
+  /*底部*/
+  .arr{
+    position: absolute;
+  }
+}
+/*第六屏动画*/
+.sixth.current p{
+  opacity: 1;
+  transition: opacity 1s linear;
+}
+.sixth.current .progress:nth-child(3)>.p-n{
+  width: 80%;
+  transition: width 2s;
+}
+.sixth.current .progress:nth-child(5)>.p-n{
+  width: 90%;
+  transition: width 2s 0.5s ;
+}
+.sixth.current .progress:nth-child(7)>.p-n{
+  width: 80%;
+  transition: width 2s 1s;
+}
+.sixth.current .progress:nth-child(9)>.p-n{
+  width: 85%;
+  transition: width 2s 1.5s;
+}
+
+
+/*第七屏*/
+.seventh{
+  position: relative;
+  .bg;
+  .content{
+    background-color: #fff;
+    opacity: 0.3;
+    position: absolute;
+    top: 2.3rem;
+    left: 1.6rem;
+    width: 15rem;
+    height: 20rem;
+
+  }
+  div{
+    margin-top: 4rem;
+    padding-left: 2rem;
+    width: 100%;
+    height: 2rem;
+
+
+  }
+
+  .email{
+    margin-left: 2rem;
+    position: absolute;
+    top: 5rem;
+    left: 1.6rem;
+    padding-left: 4rem;
+    line-height: 2rem;
+    color: #fff;
+    font-family: "Microsoft Yahei";
+    //text-align: center;
+    animation: seven 0.7s 1s linear alternate infinite;
+    span{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2rem;
+      height: 2rem;
+      background: url(../images/email.png) no-repeat;
+      background-size: 100% 100%;
+      z-index: 99;
+    }
+  }
+  .call{
+    margin-left: 2rem;
+    position: absolute;
+    top: 11rem;
+    left: 1.6rem;
+    padding-left: 4rem;
+    line-height: 2rem;
+    color: #fff;
+    font-family: "Microsoft Yahei";
+    animation: seven 0.7s 1s linear alternate infinite;
+    //text-align: center;
+    span{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2rem;
+      height: 2rem;
+      background: url(../images/iphone.png) no-repeat;
+      background-size: 100% 100%;
+      z-index: 99;
+    }
+  }
+  .QQ{
+    margin-left: 2rem;
+    position: absolute;
+    top: 17rem;
+    left: 1.6rem;
+    padding-left: 4rem;
+    line-height: 2rem;
+    color: #fff;
+    font-family: "Microsoft Yahei";
+    //text-align: center;
+    animation: seven 0.7s 1s linear alternate infinite;
+    span{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2rem;
+      height: 2rem;
+      background: url(../images/QQ.png) no-repeat;
+      background-size: 100% 100%;
+      z-index: 99;
+    }
+  }
+
+
+  .arr{
+    position: absolute;
+    margin-left: -1rem;
+  }
+}
+/*第七屏动画*/
+//.seventh.current .email{
+//
+//}
+//.seventh.current .call{
+//  animation: seven 0.7s 1s linear alternate infinite;
+//}
+//.seventh.current .QQ{
+//  animation: seven 0.7s 1s linear alternate infinite;
+//}
+/*第七屏自定义动画*/
+@keyframes seven {
+  0%{
+    transform: translateY(0px);
+  }
+  100%{
+    transform: translateY(10px);
+  }
+
+}
+
+/*自定义样式*/
+/*标题*/
+
+h1{
+    color: #fff;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+}
+.bg{
+  position: relative;
+  background: url(../images/bg1.jpg) no-repeat;
+  background-size: 100% 100%;
+
+}
+.w-circle{
+  width: 1.5rem;
+  height: 1.5rem;
+  float: left;
+  margin-right: 5px;
+  background: url(../images/bg4-waiyuan.png) no-repeat;
+  background-size: 100% 100%;
+  transform: scale(0);
+  .n-circle{
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-top: 0.4rem;
+    margin-left: 0.45rem;
+    background: url(../images/bg4-neiyuan.png) no-repeat;
+    background-size: 100% 100%;
+  }
+}
+.words{
+  overflow: hidden;
+  color: #fff;
+
+  p:nth-child(1){
+    line-height: 30px;
+    color: #adadad;
+  }
+  h2{
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+  p:nth-child(3){
+    color: #adadad;
+  }
+}
+/*进度条*/
+
+.progress{
+    position: absolute;
+    left: 3rem;
+    top: 9rem;
+    width: 15rem;
+    height: 1.5rem;
+    background-color: #adadad;
+    .p-n{
+      width: 80%;
+      height: 100%;
+      background-color: #16EAB7;
+    }
+    span{
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: #fff;
+      z-index: 1;
+
+    }
+}
+
+/*公共屏底部上下浮动自定义动画*/
+@keyframes updown{
+  0%{
+    transform: translateY(0) translateX(-50%);
+  }
+  100%{
+    transform:translateY(15px) translateX(-50%);
+  }
+}
+/*公共屏音乐旋转自定义动画*/
+@keyframes rot {
+  0%{
+
+    transform:rotate(0deg);
+
+  }
+  100%{
+
+    transform:rotate(360deg);
+  }
+}
+/*公共屏样式*/
+/*底部下滑*/
+.arr{
+  position: fixed;
+  bottom:20px;
+  left:50%;
+  width: 40%;
+  transform:translateX(-50%);
+  z-index:1000;
+  animation: updown 2s linear alternate infinite;
+  text-align: center;
+  color: #ccc;
+  font-size: 20px;
+}
+/*音乐*/
+.music-btn{
+
+  width: 60px;
+  height: 50px;
+  position: fixed;
+  top:0px;
+  right:0px;
+  z-index:100;
+  //background: url(../images/music01.gif) no-repeat  bottom;
+}
+.music{
+  position: absolute;
+  top:3px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  animation: rot 5s linear infinite normal;
+}
