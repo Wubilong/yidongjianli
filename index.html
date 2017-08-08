@@ -175,11 +175,9 @@
 
     </div>
     <div class="music-btn" id="music-btn">
-        <audio class="audio" id="audio" src="music/xxt.mp3" loop  preload="auto"></audio>
+        <audio class="audio" id="audio" src="music/xxt.mp3" loop="true"  preload="auto" autoplay="autoplay"></audio>
         <img class="music" src="images/music.png" alt=""/>
     </div>
-
-
     <!--  分页-->
     <div class="swiper-pagination swiper-pagination-bullets">
         <span class="swiper-slide swiper-pagination-bullet-active"></span>
@@ -190,7 +188,6 @@
     </div>
 </div>
 
-
 <script src="js/swiper.min.js"></script>
 <script src="zepto/zepto.min.js"></script>
 <script src="js/jquery-1.11.1.min.js"></script>
@@ -198,26 +195,19 @@
 <script>
     var mySwiper = new Swiper ('.swiper-container', {
         direction: 'vertical',
-        loop: false,
+        preventClicks : false,
+        loop: true,
         // 如果需要分页器
-
         pagination: '.swiper-pagination',
         onSlideChangeEnd:function(swiper){
             var index=swiper.activeIndex;
             $('.swiper-slide').eq(index).addClass('active').siblings().removeClass('active');
         },
-
         height:window.innerHeight,
         onSlideChangeEnd:function(swiper){
-//            alert()
             var index=swiper.activeIndex;
-            console.log(index);
-//            alert(index)
-
             $('.swiper-slide').removeClass('current').eq(index).addClass('current');
-
         }
-
     })
     function SetRem(){
         var w=document.documentElement.clientWidth;

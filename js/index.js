@@ -16,18 +16,3 @@ window.onload= function () {
 
     }
 }
-//$(function () {
-//    var a=0;
-//    $('.music-btn').click(function () {
-//        a++;
-//        if(a==1){
-//
-//        }
-//        if(a==2){
-//            $('.audio').stop();
-//        }
-//        if(a>2){
-//            a=0;
-//        }
-//    })
-//})
